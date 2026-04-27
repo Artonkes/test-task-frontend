@@ -1,0 +1,21 @@
+body {
+    font-family: $font-main;
+    font-weight: 400;
+    color: $col-black;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
