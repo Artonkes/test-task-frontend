@@ -1,0 +1,79 @@
+.header {
+    width: 100%;
+    background-color: transparent;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 33px 194px 202px;
+
+        // width: 1524px;
+        height: 75px;
+        border: 1px solid $col-white;
+        border-radius: $border-radius-lg;
+
+        // padding: 0 30px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 71px;
+    }   
+    
+    &__logo {
+        display: flex;
+        background-color: $col-white;
+        justify-content: center;
+        border-radius: $border-radius-lg;
+        height: 75px;
+        width: 184px;
+        img {
+            width: 81.25px;
+            height: auto;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin-right: 148px;
+        gap: 40px;
+        list-style: none;
+    }
+
+    &__link {
+        color: $col-white;
+        text-decoration: none;
+        font-family: $font-main;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        padding: 26.5px 20px;
+        
+        border-radius: $border-radius-lg;
+    
+        &:hover {
+            background-color: $col-light-blue;
+        }
+
+        &:active {
+            background-color: $col-blue;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        background: linear-gradient( to right, $col-light-blue, $col-blue);
+        color: $col-white;
+        padding: 0 43px;
+        border-radius: $border-radius-lg;
+        text-decoration: none;
+        font-weight: 500;
+        height: 43px;
+        justify-content: center;
+        width: 80.5px;
+        margin-right: 29px;
+    }
+
+}
