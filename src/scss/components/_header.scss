@@ -1,45 +1,84 @@
 .header {
     width: 100%;
-    background-color: transparent;
+    background-color: $col-black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        margin: 33px 194px 202px;
+        margin: 33px auto;
+        padding: 0 20px;
 
-        // width: 1524px;
-        height: 75px;
+        max-width: 1140px;
+        width: calc(100% - 40px);
+
+        min-height: 80px;
         border: 1px solid $col-white;
         border-radius: $border-radius-lg;
-
-        // padding: 0 30px;
+        box-sizing: border-box;
     }
-
-    &__list {
-        display: flex;
-        gap: 71px;
-    }   
     
     &__logo {
         display: flex;
         background-color: $col-white;
+        align-items: center;
         justify-content: center;
         border-radius: $border-radius-lg;
-        height: 75px;
+        height: 78px;
         width: 184px;
+        flex-shrink: 0;
+        margin-left: -20px;
+
         img {
             width: 81.25px;
             height: auto;
         }
     }
 
+    &__nav {
+        display: flex;
+        flex: 1;
+        margin-left: 20px;
+
+        @media (max-width: 768px) {
+            display: none;
+
+            &.is-open {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 200;
+            }
+        }
+    }
+
     &__list {
         display: flex;
-        margin-right: 148px;
-        gap: 40px;
+        gap: 20px;
         list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: 1000px) {
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
     }
 
     &__link {
@@ -48,8 +87,7 @@
         font-family: $font-main;
         font-size: 16px;
         transition: all 0.3s ease;
-        padding: 26.5px 20px;
-        
+        padding: 26.5px 15px;
         border-radius: $border-radius-lg;
     
         &:hover {
@@ -59,12 +97,17 @@
         &:active {
             background-color: $col-blue;
         }
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
     }
 
     &__button {
         display: flex;
         align-items: center;
-        background: linear-gradient( to right, $col-light-blue, $col-blue);
+        background: linear-gradient(to right, $col-light-blue, $col-blue);
         color: $col-white;
         padding: 0 43px;
         border-radius: $border-radius-lg;
@@ -72,8 +115,12 @@
         font-weight: 500;
         height: 43px;
         justify-content: center;
-        width: 80.5px;
-        margin-right: 29px;
+        white-space: nowrap;
+        flex-shrink: 0;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
 }
