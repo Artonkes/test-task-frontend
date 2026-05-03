@@ -1,0 +1,21 @@
+.bg-blur-circle {
+    position: absolute;
+    // Данные из Layout в Figma:
+    width: 887px;
+    height: 887px;
+    top: 942px;
+    left: -395px;
+
+    // Данные из Colors: #67A6FB
+    // Используем радиальный градиент для мягкости, 
+    // так как в Figma это Ellipse (круг)
+    background: radial-gradient(
+        circle, 
+        $col-light-blue 10%, 
+        transparent 90%
+    );
+    filter: blur(500px); 
+
+    z-index: -1;
+    pointer-events: none;
+}

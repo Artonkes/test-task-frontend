@@ -1,0 +1,112 @@
+.header {
+    width: 100%;
+    background-color: transparent; 
+    
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin: 33px auto;
+        padding: 0 20px;
+        max-width: 1140px;
+        width: calc(100% - 40px);
+        height: 80px; 
+        
+        border: 1px solid $col-white;
+        border-radius: $border-radius-lg;
+        box-sizing: border-box;
+        
+        background-color: $col-black; 
+    }
+
+    &__logo {
+        display: flex;
+        background-color: $col-white;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius-lg;
+        
+        height: calc(100% + 2px); 
+        width: 184px;
+        flex-shrink: 0;
+        margin: -1px 0 -1px -20px; 
+        align-self: center; 
+
+        img {
+            width: 81.25px;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            display: none;
+            &.is-open {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: $col-black;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 200;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    &__link {
+        color: $col-white;
+        text-decoration: none;
+        font-family: $font-main;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        padding: 8px 15px;
+        border-radius: $border-radius-lg;
+        white-space: nowrap;
+
+        &:hover  { background-color: rgba($col-light-blue, 0.2); }
+        &:active { background-color: $col-blue; }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to right, $col-light-blue, $col-blue);
+        color: $col-white;
+        padding: 0 43px;
+        border-radius: $border-radius-lg;
+        text-decoration: none;
+        font-weight: 500;
+        height: 43px;
+        justify-content: center;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    &__burger {
+        display: none;
+        @media (max-width: 768px) { display: flex; }
+    }
+}

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./src/scss/main.scss">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
   
@@ -20,7 +23,7 @@
         <li class="header__item"><a href="#news" class="header__link">News</a></li>
         <li class="header__item"><a href="#contact" class="header__link">Contact us</a></li>
       </ul>
-    </nav>
+    </nav>  
 
     <a class="header__button header__button--blue">Call us</a>
 
@@ -39,10 +42,11 @@
             <a href="#about" class="banner__link banner__link--about">About more</a>
             <a href="#courses" class="banner__link banner__link--course">Choose a Course</a>
           </div>
-      
-          <div class="banner__img">
-            <img src="./src/assets/images/7bc3402087f4c801ad99fceae09625073ebe4ed7.png" alt="Abstract blue shape">
-          </div>
+        </div>
+        
+        <div class="banner__img">
+          <img src="./src/assets/images/7bc3402087f4c801ad99fceae09625073ebe4ed7.png" alt="Abstract blue shape">
+        </div>
 
         </div>
       </div>
@@ -50,13 +54,17 @@
 
     <section class="slogan">
       <div class="slogan__container">
-        <h2 class="slogan__title">A team of experts —you can trust with your IT education</h2>
+        <h2 class="slogan__title">A team of experts —<br>you can trust with your IT education</h2>
         <p class="slogan__mission">Our Mission</p>
         <p class="slogan__about__mission">To make high-quality IT education accessible, helping people gain practical skills, grow professionally, and build successful careers in the technology industry.</p>
       </div>
     </section>
 
+    <div class="bg-blur-circle"></div>
+
     <section class="courses" id="courses">
+      <span class="courses__watermark courses__watermark--top">COURSES</span>
+      <span class="courses__watermark courses__watermark--bottom">COURSES</span>
       <div class="container courses__container">
         <div class="courses__header"> 
           <h2 class="course__all-courses">Courses</h2>
@@ -104,5 +112,8 @@
       </div>
     </section>
   </main>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="./src/js/main.js"></script>
 </body>
 </html>
