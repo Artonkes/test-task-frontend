@@ -1,6 +1,7 @@
 .header {
     width: 100%;
-    background-color: $col-black;
+    background-color: transparent; 
+    
     position: sticky;
     top: 0;
     z-index: 100;
@@ -9,15 +10,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
         margin: 33px auto;
         padding: 0 20px;
         max-width: 1140px;
         width: calc(100% - 40px);
-        min-height: 80px;
+        height: 80px; 
+        
         border: 1px solid $col-white;
         border-radius: $border-radius-lg;
         box-sizing: border-box;
-        overflow: hidden;
+        
+        background-color: $col-black; 
     }
 
     &__logo {
@@ -26,26 +30,27 @@
         align-items: center;
         justify-content: center;
         border-radius: $border-radius-lg;
-        height: 80px;
+        
+        height: calc(100% + 2px); 
         width: 184px;
         flex-shrink: 0;
-        margin-left: -20px;
+        margin: -1px 0 -1px -20px; 
+        align-self: center; 
 
         img {
             width: 81.25px;
             height: auto;
+            display: block;
         }
     }
 
     &__nav {
         display: flex;
         flex: 1;
-        margin-left: 60px;
+        justify-content: center;
 
         @media (max-width: 768px) {
             display: none;
-            margin-left: 0;
-
             &.is-open {
                 display: flex;
                 position: fixed;
@@ -68,14 +73,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-
-        @media (max-width: 1000px) { gap: 10px; }
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
+        align-items: center;
     }
 
     &__link {
@@ -84,14 +82,12 @@
         font-family: $font-main;
         font-size: 16px;
         transition: all 0.3s ease;
-        padding: 26.5px 15px;
+        padding: 8px 15px;
         border-radius: $border-radius-lg;
         white-space: nowrap;
 
-        &:hover  { background-color: $col-light-blue; }
+        &:hover  { background-color: rgba($col-light-blue, 0.2); }
         &:active { background-color: $col-blue; }
-
-        @media (max-width: 768px) { font-size: 20px; padding: 10px 20px; }
     }
 
     &__button {
@@ -107,41 +103,10 @@
         justify-content: center;
         white-space: nowrap;
         flex-shrink: 0;
-
-        @media (max-width: 768px) { display: none; }
     }
 
     &__burger {
         display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 36px;
-        height: 36px;
-        padding: 4px;
-        margin-right: 12px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        flex-shrink: 0;
-        z-index: 300;
-
-        span {
-            display: block;
-            height: 2px;
-            width: 100%;
-            background-color: $col-white;
-            border-radius: 2px;
-            transition: transform 0.35s ease, opacity 0.25s ease;
-            transform-origin: center;
-        }
-
-        &.is-active {
-            span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-            span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-            span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        }
-
         @media (max-width: 768px) { display: flex; }
     }
 }
